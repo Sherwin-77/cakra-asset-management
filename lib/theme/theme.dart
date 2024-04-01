@@ -6,7 +6,7 @@ ThemeData darkMode = ThemeData(
   ),
   colorScheme: ColorScheme.dark(
     background: Colors.black,
-    primary: Colors.grey[900]!,
+    primary: Colors.black,
     secondary: Colors.grey[800]!,
   )
   // Define other properties here
@@ -15,12 +15,12 @@ ThemeData darkMode = ThemeData(
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.blue,
   ),
   colorScheme: ColorScheme.light(
     background: Colors.blue,
-    primary: Colors.blue[900]!,
-    secondary: Colors.grey[800]!,
+    primary: Colors.white,
+    secondary: Colors.blue[800]!,
   )
   // Define other properties here
 );

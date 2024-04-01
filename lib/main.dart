@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:cakra_asset_management/theme/theme.dart';
+import 'package:cakra_asset_management/theme/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,12 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: lightMode,
-      darkTheme: darkMode,
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: EmptyPage(),
-      ),
+      home: const EmptyPage(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
@@ -26,27 +29,32 @@ class EmptyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("Size W is ${MediaQuery.of(context).size.width}");
-    debugPrint("Size H is ${MediaQuery.of(context).size.height}");
-    var pixRatio = MediaQuery.of(context).devicePixelRatio;
-    debugPrint(
-      "Corrected size W is ${MediaQuery.of(context).size.width * pixRatio}",
-    );
-    debugPrint(
-      "Corrected size H is ${MediaQuery.of(context).size.height * pixRatio}",
-    );
-    return Center(
-      child: Container(
-        color: Theme.of(context).colorScheme.background,
-        child: SizedBox(
-          width: 1080 / pixRatio,
-          height: 2280 / pixRatio,
-          child: const Column(
-            children: [
-              // All code here
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Empty Page'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              child: const Text('Cakra Software Developtment'),
+            ),
+            ListTile(
+              title: const Text('Toggle Theme'),
+              onTap: () {
+                Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                Navigator.pop(context); // Close the drawer after toggling theme
+              },
+            ),
+          ],
         ),
+      ),
+      body: const Center(
+        //everything goes here
       ),
     );
   }
