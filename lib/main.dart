@@ -44,7 +44,7 @@ class EmptyPage extends StatelessWidget {
               child: const Text('Cakra Software Developtment'),
             ),
             ListTile(
-              title: const Text('Toggle Theme'),
+              title: const Text('Change Theme'),
               onTap: () {
                 Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
                 Navigator.pop(context); // Close the drawer after toggling theme
