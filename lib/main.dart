@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cakra_asset_management/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: lightMode,
+      darkTheme: darkMode,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: const Scaffold(
         body: EmptyPage(),
       ),
     );
@@ -34,22 +37,15 @@ class EmptyPage extends StatelessWidget {
     );
     return Center(
       child: Container(
-        width: 1080 / pixRatio,
-        height: 2280 / pixRatio,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromRGBO(24, 0, 119, 15),
-              Color.fromRGBO(54, 0, 0, 15),
-            ]
-          )
-        ),
-        child: const Column(
-          children: [
-            // All code here
-          ],
+        color: Theme.of(context).colorScheme.background,
+        child: SizedBox(
+          width: 1080 / pixRatio,
+          height: 2280 / pixRatio,
+          child: const Column(
+            children: [
+              // All code here
+            ],
+          ),
         ),
       ),
     );
