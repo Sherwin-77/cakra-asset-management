@@ -9,8 +9,7 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
-      child: MyApp(
-      ),
+      child: MyApp(),
     ),
   );
 }
@@ -22,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: Provider.of<ThemeProvider>(context).themeData,
       home: FlutterSplashScreen.fadeIn(
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
