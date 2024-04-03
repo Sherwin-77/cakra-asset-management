@@ -59,9 +59,9 @@ class LandingPage extends StatelessWidget {
                       onPressed: () {
                         Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
                       },
-                      child: const Text(
+                      child:  Text(
                         'Masuk',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
                   ),
