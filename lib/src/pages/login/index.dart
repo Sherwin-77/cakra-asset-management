@@ -1,4 +1,5 @@
 import 'package:cakra_asset_management/src/layout.dart';
+import 'package:cakra_asset_management/src/pages/dashboard/index.dart';
 import 'package:cakra_asset_management/src/pages/forgot_password/index.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class LoginPage extends StatelessWidget {
           child: Column(
             children: [
               const Image(
-                image: AssetImage("assets/logo-white.png"),
+                image: AssetImage("assets/main-logo-white.png"),
                 width: 250,
                 height: 250,
               ),
@@ -84,7 +85,12 @@ class LoginPage extends StatelessWidget {
                               const Color.fromRGBO(255, 244, 144, 1),
                         ),
                         onPressed: () {
-                          // TODO: Dashboard page
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Dashboard(),
+                              ),
+                            );
                         },
                         child: const Text(
                           "Masuk",
