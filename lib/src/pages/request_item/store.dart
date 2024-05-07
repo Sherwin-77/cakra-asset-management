@@ -1,14 +1,16 @@
+import 'package:cakra_asset_management/src/helpers/string_helper.dart';
+import 'package:cakra_asset_management/src/models/common/item_unit.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:flutter/material.dart';
 
-class PermintaanStore extends StatefulWidget {
-  const PermintaanStore({super.key});
+class RequestItemStorePage extends StatefulWidget {
+  const RequestItemStorePage({super.key});
 
   @override
-  State<PermintaanStore> createState() => _PermintaanStoreState();
+  State<RequestItemStorePage> createState() => _RequestItemStorePageState();
 }
 
-class _PermintaanStoreState extends State<PermintaanStore> {
+class _RequestItemStorePageState extends State<RequestItemStorePage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   void _resetForm() {
     _formKey.currentState?.reset();
@@ -59,10 +61,9 @@ class _PermintaanStoreState extends State<PermintaanStore> {
                       //   labelText: 'Tanggal Permintaan',
                       //   labelStyle: TextStyle(fontWeight: FontWeight.w300),
                       // ),
-                      keyboardType:
-                          TextInputType.datetime, // Assuming date input
+                      keyboardType: TextInputType.datetime,
                     ),
-                    const SizedBox(height: 16), // Spacer
+                    const SizedBox(height: 16),
                     Row(
                       children: [
                         Expanded(
@@ -78,26 +79,19 @@ class _PermintaanStoreState extends State<PermintaanStore> {
                         ),
                         const SizedBox(width: 16), // Spacer
                         Expanded(
-                          child: DropdownButtonFormField<String>(
+                          child: DropdownButtonFormField<ItemUnit>(
                             decoration: const InputDecoration(
                               labelText: 'Satuan',
                               labelStyle:
                                   TextStyle(fontWeight: FontWeight.w300),
                             ),
-                            items: [
-                              'Unit',
-                              'Bungkus',
-                              'Batang',
-                              'Kotak',
-                              'Lainnya'
-                            ] // Example list of options
-                                .map((String value) {
-                              return DropdownMenuItem<String>(
+                            items: ItemUnit.values.map((ItemUnit value) {
+                              return DropdownMenuItem<ItemUnit>(
                                 value: value,
-                                child: Text(value),
+                                child: Text(capitalize(value.name)),
                               );
                             }).toList(),
-                            onChanged: (String? value) {
+                            onChanged: (ItemUnit? value) {
                               // Handle dropdown value change
                             },
                           ),

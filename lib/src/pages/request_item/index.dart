@@ -1,9 +1,9 @@
-import 'package:cakra_asset_management/src/pages/permintaan_page/store.dart';
+import 'package:cakra_asset_management/src/pages/request_item/store.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:flutter/material.dart';
 
-class PermintaanPage extends StatelessWidget {
-  const PermintaanPage({super.key});
+class RequestItemIndexPage extends StatelessWidget {
+  const RequestItemIndexPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class PermintaanPage extends StatelessWidget {
         tooltip: 'Add Permintaan',
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const PermintaanStore()));
+              MaterialPageRoute(builder: (context) => const RequestItemStorePage()));
         },
         child: const Icon(Icons.add, color: Colors.white, size: 28),
       ),
