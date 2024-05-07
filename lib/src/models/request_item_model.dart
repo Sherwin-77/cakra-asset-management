@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 
 @immutable
 class RequestItem {
+  final String department;
   final String name;
   final String dateRequested;
   final int quantity;
   final ItemUnit unit;
   final String? description;
   const RequestItem({
+    required this.department,
     required this.name,
     required this.dateRequested,
     required this.quantity,
