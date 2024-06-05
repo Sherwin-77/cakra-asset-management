@@ -87,11 +87,17 @@ class _PengambilanIndexPageState extends State<PengambilanIndexPage> {
                                               ),
                                               Expanded(
                                                 flex: 1,
-                                                child: Text("10"),
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Text("10"),
+                                                ),
                                               ),
                                               Expanded(
                                                 flex: 1,
-                                                child: Text("BUAH"),
+                                                child: Align(
+                                                  alignment: Alignment.topRight,
+                                                  child: Text("BUAH"),
+                                                ),
                                               )
                                               
                                             ],
@@ -309,7 +315,7 @@ deleteRiwayat(BuildContext context) {
     return AlertDialog(
       // title: const Text('Reset settings?'),
       content: const Text(
-        'Apakah Anda yakin sudah mengambil dan mengecek aset Anda ?  '
+        'Apakah Anda yakin sudah mengambil dan mengecek aset Anda ? '
       ),
       actions: [
         TextButton(
