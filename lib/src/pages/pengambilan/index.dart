@@ -309,7 +309,7 @@ deleteRiwayat(BuildContext context) {
     return AlertDialog(
       // title: const Text('Reset settings?'),
       content: const Text(
-        'Apakah Anda yakin sudah mengambil dan mengecek aset Anda ? '
+        'Apakah Anda yakin sudah mengambil dan mengecek aset Anda ?  '
       ),
       actions: [
         TextButton(
