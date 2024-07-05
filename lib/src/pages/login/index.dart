@@ -1,14 +1,21 @@
 import 'package:cakra_asset_management/src/layout.dart';
+import 'package:cakra_asset_management/src/models/authorization_provider.dart';
 import 'package:cakra_asset_management/src/pages/dashboard/index.dart';
 import 'package:cakra_asset_management/src/pages/forgot_password/index.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<AuthorizationProvider>(context);
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+
     return Scaffold(
       // resizeToAvoidBottomInset: true,
       body: BaseLayout(
@@ -39,6 +46,7 @@ class LoginPage extends StatelessWidget {
                 child: SizedBox(
                   height: 40,
                   child: TextField(
+                    controller: emailController,
                     style: const TextStyle(color: Colors.white, fontSize: 14),
                     decoration: InputDecoration(
                       icon: const Icon(Icons.mail, color: Colors.white,),
@@ -65,6 +73,7 @@ class LoginPage extends StatelessWidget {
                 child: SizedBox(
                   height: 40,
                   child: TextField(
+                    controller: passwordController,
                     style: const TextStyle(color: Colors.white, fontSize: 14),
                     decoration: InputDecoration(
                       icon: const Icon(Icons.lock, color: Colors.white,),
@@ -107,6 +116,10 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
+                    auth.setAdminStatus(emailController.text, passwordController.text);
+                    emailController.dispose();
+                    passwordController.dispose();
+
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(

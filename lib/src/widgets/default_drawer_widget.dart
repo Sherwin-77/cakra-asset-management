@@ -1,3 +1,6 @@
+import 'package:cakra_asset_management/src/models/authorization_provider.dart';
+import 'package:cakra_asset_management/src/pages/dashboard/index.dart';
+import 'package:cakra_asset_management/src/pages/drawer_pages/notification_index.dart';
 import 'package:cakra_asset_management/src/pages/landing_page/index.dart';
 import 'package:cakra_asset_management/src/pages/profile/index.dart';
 import 'package:cakra_asset_management/theme/theme.dart';
@@ -10,6 +13,8 @@ class DefaultDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<AuthorizationProvider>(context);
+
     return Drawer(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -48,11 +53,40 @@ class DefaultDrawer extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                       Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DashboardPage(),
+                        ),
+                      );
+                    },
                   ),
+
+                  //Only for user not admin
+                  auth.isAdmin ?
+                  Container() : 
                   ListTile(
                     title: const Text(
-                      'Profil',
+                      'Notifikasi',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NotificationPage(),
+                        ),
+                      );
+                    },
+                  ),
+
+                  ListTile(
+                    title: const Text(
+                      'Bantuan',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -62,27 +96,7 @@ class DefaultDrawer extends StatelessWidget {
                   ),
                   ListTile(
                     title: const Text(
-                      'Form Permintaan',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Form Persetujuan',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Item ATK',
+                      'Tentang',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -131,6 +145,7 @@ class DefaultDrawer extends StatelessWidget {
             ListTile(
               title: const Text('Keluar'),
               onTap: () {
+                auth.logOut();
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(

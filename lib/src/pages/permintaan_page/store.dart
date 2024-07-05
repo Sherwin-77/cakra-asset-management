@@ -40,7 +40,7 @@ class _PermintaanStoreState extends State<PermintaanStore> {
 
   @override
   Widget build(BuildContext context) {
-    var permintaanItemProv = Provider.of<PermintaanItemInfoProvider>(context, listen: false);
+    var permintaanItemProv = Provider.of<PermintaanItemInfoProvider>(context);
     return Scaffold(
       body: ThemedLayout(
         child: Form(
@@ -99,6 +99,12 @@ class _PermintaanStoreState extends State<PermintaanStore> {
                                 Expanded(
                                   child: TextFormField(
                                     controller: jumlahController,
+                                    validator: (value) {
+                                      if (int.tryParse(value.toString()) == null) {
+                                        return 'Mohon masukkan sebuah angka';
+                                      }
+                                      return null;
+                                    },
                                     keyboardType:
                                         TextInputType.number, // Assuming numeric input
                                   ),
@@ -165,19 +171,26 @@ class _PermintaanStoreState extends State<PermintaanStore> {
                                 keteranganController
                               )){
                                 permintaanItemProv.addItemInfo(
-                                  namaController.text,
-                                  jurusanController.text,
-                                  satuanController,
-                                  int.parse(jumlahController.text),
-                                  keteranganController.text,
-                                  tanggalController.text,
-                                  'pending'
-                                );
-                                
-                                //--PESAN LOG--
-                                // for(dynamic item in permintaanItemProv.itemInfo){
-                                //     print("Ini dari sini" + item.nama);
-                                // }
+                                namaController.text,
+                                jurusanController.text,
+                                satuanController,
+                                int.parse(jumlahController.text),
+                                keteranganController.text,
+                                tanggalController.text,
+                                'pending',
+                                "(Tidak ada pesan)"
+                              );                                 
+                              //--PESAN LOG--
+                              for(dynamic item in permintaanItemProv.itemInfo){
+                                  // print(item.nama);
+                                  // print(item.jurusan);
+                                  // print(item.satuan);
+                                  // print(item.jumlah);
+                                  // print(item.keterangan);
+                                  // print(item.tanggal);
+                                  print(item.status);
+                                  // print(item.pesanAdmin);
+                              }
                                 
                                 // !!!TIDAK BOLEH DISPOSE!!!
                                 // namaController.dispose();
