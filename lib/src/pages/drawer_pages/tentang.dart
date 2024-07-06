@@ -5,20 +5,6 @@ class TentangPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> namaAnggota = [
-      "Karina Desi Liady",
-      "Rein Jonathan Thomas",
-      "Sherwin Prasetya Makmur",
-      "Vincent Stanley",
-      "Wilson Tovano"
-    ];
-    List<String> nimAnggota = [
-      "221111905",
-      "221110904",
-      "221110711",
-      "221110003",
-      "221113421"
-    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tentang', style: TextStyle(color: Colors.white)),
@@ -31,7 +17,6 @@ class TentangPage extends StatelessWidget {
               size: 30,
               color: Colors.white,
             )),
-        actions: [],
         backgroundColor: Colors.purple,
       ),
       body: Center(
