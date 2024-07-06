@@ -83,7 +83,73 @@ class DashboardPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: 100.0,
+                        height: 100.0,
+                        child: Container(
+                          margin: const EdgeInsets.all(15.0),
+                          child: CircleAvatar(
+                            child: IconButton(
+                              onPressed: () {Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => auth.isAdmin ? const PermintaanPageAdmin() : const PermintaanPage(),
+                                  ),
+                                );},
+                              icon: const Icon(Icons.handshake),
+                              iconSize: 50.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        'Permintaan/\nPersetujuan',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      SizedBox(
+                        width: 100.0,
+                        height: 100.0,
+                        child: Container(
+                          margin: const EdgeInsets.all(15.0),
+                          child: CircleAvatar(
+                            child: IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => auth.isAdmin ? const PengambilanIndexPageAdmin() : const PengambilanIndexPage(),
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.pin_drop),
+                              iconSize: 50.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        'Pengambilan',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                   
+                  
+                ],
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
                   auth.isAdmin ? Column(
                     children: [
                       SizedBox(
@@ -137,71 +203,6 @@ class DashboardPage extends StatelessWidget {
                       ),
                       const Text(
                         'Detail',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 100.0,
-                        height: 100.0,
-                        child: Container(
-                          margin: const EdgeInsets.all(15.0),
-                          child: CircleAvatar(
-                            child: IconButton(
-                              onPressed: () {Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => auth.isAdmin ? const PermintaanPageAdmin() : const PermintaanPage(),
-                                  ),
-                                );},
-                              icon: const Icon(Icons.handshake),
-                              iconSize: 50.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Text(
-                        'Permintaan/\nPersetujuan',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 100.0,
-                        height: 100.0,
-                        child: Container(
-                          margin: const EdgeInsets.all(15.0),
-                          child: CircleAvatar(
-                            child: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => auth.isAdmin ? const PengambilanIndexPageAdmin() : const PengambilanIndexPage(),
-                                  ),
-                                );
-                              },
-                              icon: const Icon(Icons.pin_drop),
-                              iconSize: 50.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Text(
-                        'Pengambilan',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ],
