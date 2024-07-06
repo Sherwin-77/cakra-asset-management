@@ -36,17 +36,17 @@ class TentangPage extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 25,
                     fontStyle: FontStyle.italic,
-                    color: Colors.black87),
+                ),
               ),
               const SizedBox(height: 10),
               const Text(
                 "IF-A Sore, Semester IV, Juli 2024",
-                style: TextStyle(fontSize: 25, color: Colors.black87),
+                style: TextStyle(fontSize: 25),
               ),
               const SizedBox(height: 10),
               const Text(
                 "Pengembangan Mobile Flutter",
-                style: TextStyle(fontSize: 25, color: Colors.black87),
+                style: TextStyle(fontSize: 25),
               ),
               const SizedBox(height: 20),
               SizedBox(
@@ -68,12 +68,12 @@ class TentangPage extends StatelessWidget {
                         Expanded(
                           child: Text(
                             "Karina Desi Liady",
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+                            style: TextStyle(fontSize: 25),
                           ),
                         ),
                         Text(
                           "(221111905)",
-                          style: TextStyle(fontSize: 25, color: Colors.black),
+                          style: TextStyle(fontSize: 25),
                         ),
                       ],
                     ),
@@ -82,12 +82,12 @@ class TentangPage extends StatelessWidget {
                         Expanded(
                           child: Text(
                             "Rein Jonathan Thomas",
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+                            style: TextStyle(fontSize: 25),
                           ),
                         ),
                         Text(
                           "(221110904)",
-                          style: TextStyle(fontSize: 25, color: Colors.black),
+                          style: TextStyle(fontSize: 25),
                         ),
                       ],
                     ),
@@ -96,12 +96,12 @@ class TentangPage extends StatelessWidget {
                         Expanded(
                           child: Text(
                             "Sherwin Prasetya Makmur",
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+                            style: TextStyle(fontSize: 25),
                           ),
                         ),
                         Text(
                           "(221110711)",
-                          style: TextStyle(fontSize: 25, color: Colors.black),
+                          style: TextStyle(fontSize: 25),
                         ),
                       ],
                     ),
@@ -110,12 +110,12 @@ class TentangPage extends StatelessWidget {
                         Expanded(
                           child: Text(
                             "Vincent Stanley",
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+                            style: TextStyle(fontSize: 25),
                           ),
                         ),
                         Text(
                           "(221110003)",
-                          style: TextStyle(fontSize: 25, color: Colors.black),
+                          style: TextStyle(fontSize: 25),
                         ),
                       ],
                     ),
@@ -124,12 +124,12 @@ class TentangPage extends StatelessWidget {
                         Expanded(
                           child: Text(
                             "Wilson Tovano",
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+                            style: TextStyle(fontSize: 25),
                           ),
                         ),
                         Text(
                           "(221113421)",
-                          style: TextStyle(fontSize: 25, color: Colors.black),
+                          style: TextStyle(fontSize: 25),
                         ),
                       ],
                     ),
