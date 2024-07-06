@@ -10,7 +10,11 @@ ThemeData darkMode = ThemeData.dark().copyWith(
     onPrimary: Colors.white,
     secondary: Color(0xFF2F353D),
   ),
-  textTheme: Typography.whiteMountainView,
+  textTheme: Typography.whiteMountainView.copyWith(
+    titleSmall: TextStyle(
+      color: Colors.white
+    )
+  ),
 
   // Define other properties here
 );
@@ -25,7 +29,11 @@ ThemeData lightMode = ThemeData.light().copyWith(
     primary: Color(0xFF5D00C3),
     secondary: Color(0xFFDDDDDD),
   ),
-  textTheme: Typography.blackMountainView,
+  textTheme: Typography.blackMountainView.copyWith(
+    titleSmall: TextStyle(
+      color: Colors.grey[800]
+    )
+  ),
 
   // Define other properties here
 );

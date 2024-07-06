@@ -1,14 +1,19 @@
 import 'package:cakra_asset_management/src/layout.dart';
+import 'package:cakra_asset_management/src/models/authorization_provider.dart';
 import 'package:cakra_asset_management/src/pages/dashboard/index.dart';
 import 'package:cakra_asset_management/src/pages/forgot_password/index.dart';
 import 'package:cakra_asset_management/src/pages/register/index.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<AuthorizationProvider>(context);
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
     return Scaffold(
       body: BaseLayout(
         child: SingleChildScrollView(
@@ -107,6 +112,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
+                      auth.setAdminStatus(emailController.text, passwordController.text);
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
