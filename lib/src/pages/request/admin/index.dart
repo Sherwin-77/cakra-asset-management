@@ -1,5 +1,5 @@
 import 'package:cakra_asset_management/src/pages/dashboard/index.dart';
-import 'package:cakra_asset_management/src/pages/permintaan_page/admin/acceptance.dart';
+import 'package:cakra_asset_management/src/pages/request/admin/acceptance.dart';
 import 'package:cakra_asset_management/src/themed_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:cakra_asset_management/src/models/permintaan_item_model.dart';
