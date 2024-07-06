@@ -51,11 +51,11 @@ class _HalamanLaporanState extends State<HalamanLaporan> {
           style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.settings),
-            color: Colors.white,
-          )
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: Icon(Icons.settings),
+          //   color: Colors.white,
+          // )
         ],
       ),
       body: Padding(
