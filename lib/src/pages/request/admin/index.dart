@@ -247,7 +247,7 @@ class _PermintaanPageAdminState extends State<PermintaanPageAdmin> {
                     child: ListView.builder(
                       itemCount: jurusanList.length,
                       itemBuilder: (context, index){
-                        final pendingItems = permintaanItemInfoList.itemInfo.where((item) => item.jurusan == jurusanList[index] && item.status == 'pending').toList();
+                        // final pendingItems = permintaanItemInfoList.itemInfo.where((item) => item.jurusan == jurusanList[index] && item.status == 'pending').toList();
                         return ListTile(
                           leading: Text(jurusanList[index]),
                           trailing: 

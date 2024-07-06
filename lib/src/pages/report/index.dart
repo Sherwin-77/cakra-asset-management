@@ -51,15 +51,10 @@ class _HalamanLaporanState extends State<HalamanLaporan> {
           style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[
-          // IconButton(
-          //   onPressed: () {},
-          //   icon: Icon(Icons.settings),
-          //   color: Colors.white,
-          // )
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(32.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,9 +99,10 @@ class _HalamanLaporanState extends State<HalamanLaporan> {
                     );
                   }).toList(),
                 ),
-                SizedBox(height: 16)
               ]),
+              SizedBox(height: 16,),
               Text('Masukkan Periode:'),
+              SizedBox(height: 16,),
               Row(
                 children: [
                   Expanded(
@@ -155,18 +151,21 @@ class _HalamanLaporanState extends State<HalamanLaporan> {
                       );
                     }).toList(),
                   ),
-                  SizedBox(height: 16)
+                 
                 ],
               ),
+              SizedBox(height: 16,),
               Row(
                 children: [Text('Nama File')],
               ),
+              SizedBox(height: 16,),
               TextFormField(
                 decoration: InputDecoration(
                     hintText: 'Maksimal 50 Karakter',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0))),
               ),
+              SizedBox(height: 16,),
               Row(
                 children: [
                   Checkbox(
@@ -211,7 +210,7 @@ class _HalamanLaporanState extends State<HalamanLaporan> {
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple.shade700,
-                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 24),
                   ),
                 ),
               ),

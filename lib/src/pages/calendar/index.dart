@@ -78,7 +78,7 @@ class _CalendarPageState extends State<CalendarPage> {
                                 child: Container(
                                   padding: EdgeInsets.all(16.0),
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Theme.of(context).colorScheme.secondary,
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   child: AddEventForm(),
