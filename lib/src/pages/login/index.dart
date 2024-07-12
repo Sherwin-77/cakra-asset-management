@@ -41,6 +41,7 @@ class LoginPage extends StatelessWidget {
                   child: SizedBox(
                     height: 50,
                     child: TextField(
+                      controller: emailController,
                       style: const TextStyle(color: Colors.white, fontSize: 14),
                       decoration: InputDecoration(
                           icon: const Icon(
@@ -70,6 +71,7 @@ class LoginPage extends StatelessWidget {
                   child: SizedBox(
                     height: 50,
                     child: TextField(
+                      controller: passwordController,
                       style: const TextStyle(color: Colors.white, fontSize: 14),
                       decoration: InputDecoration(
                           icon: const Icon(
@@ -93,7 +95,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
+                const SizedBox( 
                   height: 20,
                 ),
                 Container(
